@@ -59,7 +59,7 @@
 					"name": "string.quoted.double.quant",
 					"patterns": [
 						{
-							"match": "\\\\[ntr0\"'\\\\]",
+							"match": "\\\\(x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|u\\{[0-9a-fA-F]+\\}|[abfnrtv0\"'\\\\])",
 							"name": "constant.character.escape.quant"
 						}
 					]
@@ -71,7 +71,13 @@
 				{
 					"begin": "'",
 					"end": "'",
-					"name": "string.quoted.single.quant"
+					"name": "string.quoted.single.quant",
+					"patterns": [
+						{
+							"match": "\\\\(x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|u\\{[0-9a-fA-F]+\\}|[abfnrtv0\"'\\\\])",
+							"name": "constant.character.escape.quant"
+						}
+					]
 				}
 			]
 		},
@@ -86,7 +92,7 @@
 		"keywords": {
 			"patterns": [
 				{
-					"match": "\\b(func|extern|struct|enum|if|else|while|switch|break|continue|return|load|using|region|mut|as|as!|sizeof|alloc)\\b",
+					"match": "\\b(func|extern|struct|enum|if|else|while|switch|break|continue|return|load|using|region|mut|as|as!|sizeof|alloc|module|for)\\b",
 					"name": "keyword.control.quant"
 				},
 				{
