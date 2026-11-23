@@ -4,7 +4,7 @@
   "publisher": "grafmorkov",
   "description": "Language support for the Quant programming language.",
   "main": "extension.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
