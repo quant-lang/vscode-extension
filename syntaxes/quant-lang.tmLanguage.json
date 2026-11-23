@@ -92,8 +92,12 @@
 		"keywords": {
 			"patterns": [
 				{
-					"match": "\\b(func|extern|struct|dynamic|enum|if|else|while|switch|break|continue|return|load|using|region|mut|as|as!|sizeof|alloc|module|for)\\b",
+					"match": "\\b(func|extern|struct|dynamic|enum|if|else|while|switch|break|continue|return|load|using|region|mut|sizeof|alloc|module|for)\\b",
 					"name": "keyword.control.quant"
+				},
+				{
+					"match": "\\bas!(?![A-Za-z0-9_])|\\bas\\b",
+					"name": "keyword.operator.quant"
 				},
 				{
 					"match": "\\b(case|default)\\b(?=\\s*:)",
@@ -156,7 +160,7 @@
 		"constants": {
 			"patterns": [
 				{
-					"match": "\\b(true|false|null)\\b",
+					"match": "(\\+=|-=|\\*=|/=|&=|\\|=|==|!=|<=|>=|&&|\\|\\||[+\\-*/=<>&|])",
 					"name": "constant.language.quant"
 				}
 			]
