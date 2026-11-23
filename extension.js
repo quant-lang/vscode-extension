@@ -4,15 +4,22 @@ const provider = vscode.languages.registerCompletionItemProvider(
     "quant-lang",
     {
         provideCompletionItems(document, position) {
-
             const line = document.lineAt(position);
             const text = line.text.substring(0, position.character);
 
             const attributes = [
                 "entry",
-                "inline",
+                "init",
+                "guard",
+                "public",
+                "private",
+                "hide",
+                "unhide",
+                "syscall",
                 "export",
-                "extern"
+                "import",
+                "onbegin",
+                "onend"
             ].map(attribute => {
                 return new vscode.CompletionItem(
                     attribute,
@@ -21,13 +28,11 @@ const provider = vscode.languages.registerCompletionItemProvider(
             });
 
 
-            if (text.endsWith("@")) {
+            if (/@\w*$/.test(text)) {
                 return attributes;
             }
 
-
             const items = [];
-
 
             const types = [
                 "i8",
@@ -46,7 +51,6 @@ const provider = vscode.languages.registerCompletionItemProvider(
                 "void"
             ];
 
-
             for (const type of types) {
                 items.push(
                     new vscode.CompletionItem(
@@ -55,7 +59,6 @@ const provider = vscode.languages.registerCompletionItemProvider(
                     )
                 );
             }
-
 
             const keywords = [
                 "func",
@@ -76,7 +79,6 @@ const provider = vscode.languages.registerCompletionItemProvider(
                 "default"
             ];
 
-
             for (const keyword of keywords) {
                 items.push(
                     new vscode.CompletionItem(
@@ -85,7 +87,6 @@ const provider = vscode.languages.registerCompletionItemProvider(
                     )
                 );
             }
-
 
             return items;
         }
