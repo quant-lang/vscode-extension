@@ -48,7 +48,8 @@ const provider = vscode.languages.registerCompletionItemProvider(
                 "bool",
                 "char",
                 "str",
-                "void"
+                "void",
+                "nullptr"
             ];
 
             for (const type of types) {
