@@ -60,6 +60,7 @@ const provider = vscode.languages.registerCompletionItemProvider(
             const keywords = [
                 "func",
                 "struct",
+                "dynamic",
                 "enum",
                 "extern",
                 "return",

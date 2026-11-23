@@ -92,7 +92,7 @@
 		"keywords": {
 			"patterns": [
 				{
-					"match": "\\b(func|extern|struct|enum|if|else|while|switch|break|continue|return|load|using|region|mut|as|as!|sizeof|alloc|module|for)\\b",
+					"match": "\\b(func|extern|struct|dynamic|enum|if|else|while|switch|break|continue|return|load|using|region|mut|as|as!|sizeof|alloc|module|for)\\b",
 					"name": "keyword.control.quant"
 				},
 				{
