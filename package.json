@@ -28,7 +28,7 @@
     "highlighting"
   ],
   "activationEvents": [
-    "onLanguage:quant"
+    "onLanguage:quant-lang"
   ],
   "contributes": {
     "languages": [
@@ -50,6 +50,21 @@
         "scopeName": "source.quant",
         "path": "./syntaxes/quant-lang.tmLanguage.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Quant",
+      "properties": {
+        "quant.qudPath": {
+          "type": "string",
+          "default": "/usr/local/bin/qud",
+          "description": "Path to the qud diagnostics executable."
+        },
+        "quant.qudTarget": {
+          "type": "string",
+          "default": "",
+          "description": "Optional target passed to qud as --target."
+        }
+      }
+    }
   }
 }
